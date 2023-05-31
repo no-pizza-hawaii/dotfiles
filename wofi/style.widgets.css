@@ -1,0 +1,6 @@
+@import ".config/wofi/style.css";
+
+#outer-box {
+    margin: 1px;
+    margin-top: -30px;
+}

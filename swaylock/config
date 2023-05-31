@@ -1,0 +1,51 @@
+
+# daemonize
+
+clock
+datestr=%A, %e. %B
+
+# screenshots
+# effect-blur=10x4
+image=/home/beni/pictures/wallpaper/pawel-czerwinski-OY3slACa3ec-unsplash.jpg
+scaling=fill
+
+font=JetBrainsMono Nerd Font
+font-size=20
+
+grace=60
+
+indicator-caps-lock
+indicator-idle-visible
+indicator-radius=100
+# indicator
+# no-unlock-indicator
+
+# Ring
+key-hl-color=#74c7ec
+bs-hl-color=#a6adc8
+caps-lock-key-hl-color=#fab387
+caps-lock-bs-hl-color=#a6adc8
+
+text-color=#cdd6f4S
+text-clear-color=#cdd6f4S
+text-caps-lock-color=#cdd6f4S
+text-ver-color=#cdd6f4S
+text-wrong-color=#cdd6f4S
+
+line-color=#11111b
+line-clear-color=#11111b
+line-caps-lock-color=#11111b
+line-ver-color=#11111b
+line-wrong-color=#11111b
+
+inside-color=#11111b80
+inside-clear-color=#cba6f780
+inside-caps-lock-color=#f9e2af80
+inside-ver-color=#74c7ec80
+inside-wrong-color=#eba0ac80
+
+ring-color=#11111b
+ring-clear-color=#cba6f7
+ring-caps-lock-color=#f9e2af
+ring-ver-color=#74c7ec
+ring-wrong-color=#eba0ac

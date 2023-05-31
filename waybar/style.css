@@ -1,0 +1,340 @@
+@import "mocha.css";
+
+* {
+	border: none;
+	border-radius: 6px;
+  	font-family: "JetBrainsMono Nerd Font";
+	font-size: 12px;
+	min-height: 10px;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+/* Sway window */
+#window {
+	margin-top: 10px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	transition: none;
+	color: @yellow;
+	background: @crust;
+}
+
+window#waybar.empty {
+	background: transparent;
+}
+
+#tags {
+	margin-top: 6px;
+	margin-left: 12px;
+	font-size: 4px;
+	margin-bottom: 0px;
+	min-width: 0;
+	background: @crust;
+	transition: none;
+}
+
+#tags button {
+	min-width: 50px;
+	transition: none;
+	color: @yellow;
+	background: transparent;
+	font-size: 16px;
+	border-radius: 2px;
+}
+S
+#tags button.occupied {
+	transition: none;
+	color: @yellow;
+	background: transparent;
+	font-size: 4px;
+}
+
+#tags button.focused {
+	color: @yellow;
+    border-top: 2px solid @yellow;
+    border-bottom: 2px solid @yellow;
+}
+
+#tags button:hover {
+	transition: none;
+	box-shadow: inherit;
+	text-shadow: inherit;
+	color: #ffffee;
+    border-color: #ffffee;
+    color: #ffffee;
+}
+
+#tags button.focused:hover {
+    color: #ffffee;
+}
+
+#tags button.urgent {
+        border-top: 2px solid @red;
+        border-bottom: 2px solid @red;
+}
+
+#workspaces button {
+
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 3px;
+	padding-right: 3px;
+	margin-bottom: 0px;
+        /* padding: 0 0 0 0;
+        margin: 4px 3px 6px 3px; */
+        background-color: @crust;
+        color: @text;
+        min-width: 36px;
+}
+
+#workspaces button.active {
+
+        padding: 0 0 0 0;
+        margin: 4px 3px 6px 3px;
+        background-color: @crust;
+        color: @subtext1;
+        min-width: 36px;
+}
+
+#workspaces button:hover {
+        background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+        background-color: @maroon;
+        color: @crust;
+}
+
+#workspaces button.urgent {
+        background-color: @red;
+}
+
+#workspaces {
+        margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+	margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+	margin-right: 0;
+}
+
+@keyframes blink {
+    to {
+        background-color: @yellow;
+        color: @subtext1;
+    }
+}
+
+#custom-launcher {
+	font-size: 20px;
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 5px;
+	transition: none;
+    color: @mauve;
+    background: @crust;
+}
+
+#scratchpad {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 5px;
+	transition: none;
+    color: @text;
+    background: @crust;
+}
+
+#custom-media {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	transition: none;
+	color: @peach;
+	background: @crust;
+}
+
+#pulseaudio {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	transition: none;
+	color: @green;
+	background: @crust;
+}
+
+#memory {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	transition: none;
+	color: @teal;
+	background: @crust;
+}
+
+#cpu {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	transition: none;
+	color: @sky;
+	background: @crust;
+}
+
+#network {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	transition: none;
+	color: @sapphire;
+	background: @crust;
+}
+
+#custom-weather {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	transition: none;
+	color: @blue;
+	background: @crust;
+	/*background: #1A1826;*/
+}
+
+#clock {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	transition: none;
+	color: @blue;
+	background: @crust;
+	/*background: #1A1826;*/
+}
+
+#custom-power {
+	font-size: 16px;
+	margin-top: 6px;
+	margin-left: 8px;
+	margin-right: 8px;
+	padding-left: 10px;
+	padding-right: 15px;
+	margin-bottom: 0px;
+	transition: none;
+	color: @lavender;
+	background: @crust;
+}
+
+#tray {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+	color: @text;
+	background: @crust;
+}
+
+#custom-wallpaper {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #ffffee;
+	background: @crust;
+}
+
+#custom-updates {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #ffffee;
+	background: #E8A2AF;
+}
+
+#custom-mpc {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #ffffee;
+	background: #926D54;
+}
+
+#battery {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #ffffee;
+	background: #9F9C9D;
+}
+
+#battery.charging, #battery.plugged {
+	color: #ffffee;
+    background-color: #9F9C9D;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #9F9C9D;
+    color: #ffffee;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#backlight {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #ffffee;
+	background: #D3A46E;
+}
