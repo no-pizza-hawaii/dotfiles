@@ -12,10 +12,6 @@ def get_windows():
     process = subprocess.Popen(
         command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
-
-    process = subprocess.Popen(
-        command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-    )
     data = json.loads(process.communicate()[0])
 
     # Select outputs that are active
@@ -23,11 +19,14 @@ def get_windows():
     for output in data["nodes"]:
 
         # The scratchpad (under __i3) is not supported
-        if output.get("name") != "__i3" and output.get("type") == "output":
+        if output.get("type") == "output":
             workspaces = output.get("nodes", [])
             for ws in workspaces:
                 if ws.get("type") == "workspace":
                     windows.extend(extract_nodes_iterative(ws))
+
+    windows.sort(key=lambda x: x.get("workspace"))
+
     return windows
 
 
@@ -38,6 +37,7 @@ def extract_nodes_iterative(workspace):
     floating_nodes = workspace.get("floating_nodes", [])
 
     for floating_node in floating_nodes:
+        floating_node["workspace"] = workspace.get("name")
         all_nodes.append(floating_node)
 
     nodes = workspace.get("nodes", [])
@@ -46,6 +46,7 @@ def extract_nodes_iterative(workspace):
 
         # Leaf node
         if not node.get("nodes"):
+            node["workspace"] = workspace.get("name")
             all_nodes.append(node)
         # Nested node, handled iterative
         else:
@@ -55,9 +56,18 @@ def extract_nodes_iterative(workspace):
     return all_nodes
 
 
+def get_workspace_string(window):
+    ws = window.get("workspace")
+    if ws is None:
+        return "?"
+    elif ws == "__i3_scratch":
+        return "-"
+    return ws
+
+
 # Returns an array of all windows
 def parse_windows(windows):
-    return [window.get("name") for window in windows]
+    return [f'[{get_workspace_string(window)}] {window.get("name")}' for window in windows]
 
 
 # Returns a newline seperated UFT-8 encoded string of all windows for wofi

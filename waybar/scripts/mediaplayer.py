@@ -10,6 +10,7 @@ from gi.repository import Playerctl, GLib
 
 logger = logging.getLogger(__name__)
 
+
 def getIcon(name):
     icons = {"spotify": " ", "spotify_player": " ", "firefox": " "}
     if name in icons:
@@ -35,6 +36,7 @@ def write_output(text, player, manager):
     sys.stdout.write(json.dumps(output) + '\n')
     sys.stdout.flush()
 
+
 def write_metadata(manager):
     logger.info('Writing metadata')
 
@@ -46,6 +48,7 @@ def write_metadata(manager):
     
     sys.stdout.write('\n'.join(info))
     sys.stdout.flush()
+
 
 def get_metadata(player, metadata, manager):
     track_info = ''
@@ -65,9 +68,11 @@ def get_metadata(player, metadata, manager):
     
     return track_info
 
+
 def on_play(player, status, manager):
     logger.info('Received new playback status')
     on_metadata(player, player.props.metadata, manager)
+
 
 def on_metadata(player, metadata, manager):
     logger.info('Received new metadata')

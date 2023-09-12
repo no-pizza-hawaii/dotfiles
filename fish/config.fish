@@ -35,6 +35,8 @@ abbr -a -g untar 'tar -xzvf'
 abbr -a -g bamode 'conda activate ba'
 abbr -a -g badone 'conda deactivate'
 abbr -a --position anywhere .c '~/.config/'
+abbr -a -g reload 'source ~/.config/fish/config.fish'
+abbr -a -g sennheiser 'bluetoothctl power on && bluetoothctl connect 80:C3:BA:3F:93:8E'
 
 # Make su launch fish
 function su
@@ -59,3 +61,4 @@ conda deactivate
 # <<< conda initialize <<<
 
 fish_add_path /home/beni/.local/bin/spicetify
+fish_add_path /home/beni/.local/bin/scripts

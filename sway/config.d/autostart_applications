@@ -20,3 +20,7 @@ exec dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 
 # Sway Fader
 # exec python3 ~/.config/sway/scripts/swayfader.py      
+
+# PlayerCtl Daemon (allows to target last accessed player)
+exec playerctl daemon
+

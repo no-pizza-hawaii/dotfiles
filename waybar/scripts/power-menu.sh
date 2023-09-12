@@ -1,6 +1,6 @@
 #!/bin/bash
 
-entries="Logout Suspend Reboot Shutdown"
+entries="Shutdown Reboot Suspend Logout"
 
 selected=$(printf '%s\n' $entries | wofi --conf=$HOME/.config/wofi/config.power --style=$HOME/.config/wofi/style.widgets.css | awk '{print tolower($1)}')
 
